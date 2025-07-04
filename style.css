@@ -1,0 +1,125 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #70c5ce;
+  font-family: Arial, sans-serif;
+  touch-action: manipulation;
+  overflow: hidden;
+}
+
+.game-container {
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  height: 600px;
+  overflow: hidden;
+  background-image: url('https://iili.io/FnlUqZB.png');
+  background-size: cover;
+  border: 2px solid #000;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+#bird {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  background-image: url('https://iili.io/FnSCMrv.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
+  transition: transform 0.1s;
+}
+
+.pipe {
+  position: absolute;
+  width: 70px;
+  background-image: url('https://iili.io/FnSCGEJ.png');
+  background-size: 100% 100%;
+  z-index: 5;
+}
+
+#score-display {
+  position: absolute;
+  top: 20px;
+  width: 100%;
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  z-index: 20;
+}
+
+#game-over, #start-screen {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 36px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.8);
+  z-index: 30;
+  display: none;
+  background-color: rgba(0, 0, 0, 0.8);
+  padding: 30px;
+  border-radius: 15px;
+  border: 3px solid #ffcc00;
+}
+
+#start-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.btn {
+  margin-top: 30px;
+  padding: 12px 25px;
+  font-size: 20px;
+  background-color: #ffcc00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  transition: all 0.3s;
+}
+
+.btn:hover {
+  background-color: #ffdd33;
+  transform: scale(1.05);
+}
+
+.btn:active {
+  transform: scale(0.95);
+}
+
+@media (max-width: 500px) {
+  .game-container {
+    height: 100vh;
+    max-width: 100%;
+    border: none;
+  }
+
+  #bird {
+    width: 45px;
+    height: 45px;
+  }
+
+  #game-over, #start-screen {
+    font-size: 30px;
+    width: 85%;
+    padding: 20px;
+  }
+
+  .btn {
+    padding: 10px 20px;
+    font-size: 18px;
+  }
+}
